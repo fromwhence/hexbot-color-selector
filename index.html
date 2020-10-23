@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="index.css" rel="stylesheet">
+  <script src="index.js" defer></script>
+  <script src="https://kit.fontawesome.com/0e8ff5a22e.js" crossorigin="anonymous"></script>
+  <title>Hexbot API Experimentation</title>
+</head>
+<body>
+  <header>
+    <h1 class="title">Hexbot API</h1>
+    <div class="actions-container">
+      <div id="refresh-colors">
+        <i class="fas fa-redo-alt"></i>
+        <span id="refresh-text">Colors</span>
+      </div>
+      <div id="remove-favorites">
+        <i class="fas fa-trash-alt"></i>
+        <span class="remove-text">Remove all</span>
+    </div>
+  </header>
+  <div class="favorite-colors-container">
+    <img id="favorite-icon" src="images/add-to-favorites-icon.png" alt="favorite heart with plus sign"/>
+    <ul id="favorite-colors"></ul>
+    <i id="clipboard-icon" class="fas fa-paste"></i>
+  </div>
+  <div id="color-grid">
+  </div>
+  <textarea id="copied-content"></textarea>
+</body>
+</html>
