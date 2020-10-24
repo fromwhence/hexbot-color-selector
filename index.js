@@ -94,7 +94,7 @@ window.onload = function() {
 // Add color to favorites - li approach
 document.addEventListener('click', function (event) {
   if (event.target.classList.contains('add--favorite')) {
-    resetIcons();
+    activateIcons();
     event.target.innerHTML = "&#8722;";
     event.target.parentElement.classList.add('selected');
     let hexText = event.target.nextElementSibling.innerText;
@@ -151,11 +151,17 @@ document.addEventListener('click', function (event) {
   } 
 }, false);
 
+function activateIcons() {
+  removeFavorites.classList.add('active');
+  favoriteIcon.classList.add('icon-active');
+  clipboardIcon.classList.add('icon-active');
+};
+
 function resetIcons() {
   removeFavorites.classList.remove('active');
   favoriteIcon.classList.remove('icon-active');
   clipboardIcon.classList.remove('icon-active');
-}
+};
 
 // Remove all favorite colors using trashcan icon
 
