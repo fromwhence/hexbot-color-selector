@@ -54,16 +54,16 @@ function colorCountByWidth(windowWidth) {
     colorCount = 48;
   }
   if (windowWidth >= 768) {
-    colorCount = 64;
+    colorCount = 66;
   }
   if (windowWidth >= 1024) {
     colorCount = 96;
   }
-  if (windowWidth >= 1200) {
-    colorCount = 120;
+  if (windowWidth >= 1366) {
+    colorCount = 132;
   }
   if (windowWidth >= 1440) {
-    colorCount = 144;
+    colorCount = 154;
   }
   return colorCount;
 }
@@ -124,7 +124,7 @@ window.onload = function() {
 // Add color to favorites - li approach
 document.addEventListener('click', function (event) {
   if (event.target.classList.contains('add--favorite')) {
-    favoriteIcon.src = 'images/add-to-favorites-icon-active.png';
+    favoriteIcon.classList.add('icon-active');
     clipboardIcon.classList.add('icon-active');
     event.target.innerHTML = "&#8722;";
     event.target.parentElement.classList.add('selected');
@@ -161,6 +161,7 @@ document.addEventListener('click', function (event) {
     // Resets favorite icon, clipboard icon, and remove all if no favorites remain
     if (document.getElementById('favorite-colors').firstChild === null) {
       resetIcons();
+
     }
 
     let hexMatches = document.querySelectorAll('.my--color.selected');
@@ -182,7 +183,8 @@ document.addEventListener('click', function (event) {
 }, false);
 
 function resetIcons() {
-  favoriteIcon.src = 'images/add-to-favorites-icon.png';
+  removeFavorites.classList.remove('active');
+  favoriteIcon.classList.remove('icon-active');
   clipboardIcon.classList.remove('icon-active');
 }
 
@@ -207,6 +209,10 @@ removeFavorites.addEventListener('click', function() {
         hexSelectedArr[j].childNodes[1].innerHTML = '&#43;';
       } 
     }
+  }
+  // Removes any favorites form previous color grid
+  for (let i = 0; i < hexFavorites.length; i++) {
+    hexFavorites[i].remove();
   }
 });
 

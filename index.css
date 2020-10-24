@@ -85,7 +85,6 @@ header {
 
 #remove-favorites.active {
   visibility: visible;
-  
 }
 
 #remove-favorites.active:hover,
@@ -104,28 +103,55 @@ header {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  padding-left: 1rem;
+  padding-left: 0.75rem;
 }
 
-.favorite-colors {
-  display: block;
+.favorite-colors-container i {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #aaa;
+  padding: 0.4rem 0.325rem;
+  justify-self: flex-start;
+  align-self: flex-start;
+  pointer-events: none;
 }
 
 #favorite-icon {
-  align-self: flex-start;
-  justify-self: flex-start;
-  width: 30px;
-  height: auto;
-  margin: 0.4rem 0.4rem 0.4rem 0;
+  font-size: 1.7rem;
 }
+
+#clipboard-icon {
+  position: absolute;
+  padding-top: 0.475rem;
+  right: 0.7rem;
+}
+
+#favorite-icon.icon-active,
+#clipboard-icon.icon-active {
+  color: #555;
+}
+
+#clipboard-icon.icon-active {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+#clipboard-icon:hover ,
+#clipboard-icon:focus i
+ {
+  color: #222;
+}
+
+/* Selected colors */
 
 #favorite-colors {
   display: block;
   flex-wrap: wrap;
+  justify-content: center;
   padding-top: 0.425rem;
   padding-bottom: 0.2rem;
-  margin-left: 0.1rem;
-  margin-right: 2.25rem;
+  margin-left: 0.4rem;
+  margin-right: 2rem;
 }
 
 #favorite-colors li {
@@ -153,34 +179,7 @@ header {
   opacity: 0.9;
 }
 
-#clipboard-icon {
-  position: absolute;
-  display: block;
-  font-size: 1.5rem;
-  color: #aaa;
-  width: 40px;
-  right: 0.2rem;
-  padding: 0.55rem 0.2rem 0.45rem 0.4rem;
-  justify-self: center;
-  align-self: flex-start;
-  pointer-events: none;
-}
-
-#clipboard-icon.icon-active {
-  color: #444;
-  pointer-events: all;
-  cursor: pointer;
-}
-
-#clipboard-icon:hover ,
-#clipboard-icon:focus i
- {
-  color: #222;
-}
-
-#clipboard-icon:active {
-  color: #6c90b2;
-}
+/* Color grid */
 
 #color-grid {
   opacity: 0;
