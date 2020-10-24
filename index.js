@@ -86,36 +86,6 @@ refreshColors.addEventListener('click', function() {
   getColors(colorCount);
 })
 
-// Message variable contains the div object which 
-// is used to display message after we are done resizing 
-let message = document.getElementById("Resizing complete"); 
-
-// timeOutFunctionId stores a numeric ID which is  
-// used by clearTimeOut to reset timer 
-let timeOutFunctionId; 
-
-// The function that we want to execute after  
-// we are done resizing 
-function workAfterResizeIsDone() {
-  windowWidth = window.innerWidth;
-  console.log(`New color count is ${colorCountByWidth(windowWidth)}.`);
-  getColors(colorCount);
-} 
-
-// The following event is triggered continuously 
-// while we are resizing the window 
-window.addEventListener("resize", function() { 
-    
-    // clearTimeOut() resets the setTimeOut() timer 
-    // due to this the function in setTimeout() is  
-    // fired after we are done resizing 
-    clearTimeout(timeOutFunctionId); 
-    
-    // setTimeout returns the numeric ID which is used by 
-    // clearTimeOut to reset the timer 
-    timeOutFunctionId = setTimeout(workAfterResizeIsDone, 500); 
-});
-
 // Fade in on reload
 window.onload = function() {
   colorGrid.style.opacity = 1;
@@ -124,8 +94,7 @@ window.onload = function() {
 // Add color to favorites - li approach
 document.addEventListener('click', function (event) {
   if (event.target.classList.contains('add--favorite')) {
-    favoriteIcon.classList.add('icon-active');
-    clipboardIcon.classList.add('icon-active');
+    resetIcons();
     event.target.innerHTML = "&#8722;";
     event.target.parentElement.classList.add('selected');
     let hexText = event.target.nextElementSibling.innerText;
