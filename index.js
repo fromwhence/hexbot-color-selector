@@ -51,19 +51,19 @@ function colorCountByWidth(windowWidth) {
     colorCount = 24;
   }
   if (windowWidth >= 576) {
-    colorCount = 50;
+    colorCount = 48;
   }
   if (windowWidth >= 768) {
-    colorCount = 84;
+    colorCount = 64;
   }
   if (windowWidth >= 1024) {
-    colorCount = 112;
+    colorCount = 96;
   }
   if (windowWidth >= 1200) {
-    colorCount = 126;
+    colorCount = 120;
   }
   if (windowWidth >= 1440) {
-    colorCount = 132;
+    colorCount = 144;
   }
   return colorCount;
 }

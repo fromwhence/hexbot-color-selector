@@ -122,9 +122,10 @@ header {
 #favorite-colors {
   display: block;
   flex-wrap: wrap;
-  padding-top: 0.4rem;
+  padding-top: 0.425rem;
   padding-bottom: 0.2rem;
-  margin-right: 40px;
+  margin-left: 0.1rem;
+  margin-right: 2.25rem;
 }
 
 #favorite-colors li {
@@ -159,7 +160,7 @@ header {
   color: #aaa;
   width: 40px;
   right: 0.2rem;
-  padding: 0.4rem 0 0.4rem 0.4rem;
+  padding: 0.55rem 0.2rem 0.45rem 0.4rem;
   justify-self: center;
   align-self: flex-start;
   pointer-events: none;
