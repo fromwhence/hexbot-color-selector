@@ -71,8 +71,7 @@ header {
 
 #remove-favorites {
   cursor: pointer;
-  /* display: flex; */
-  visibility: visible;
+  visibility: hidden;
 }
 
 .remove-text {
@@ -106,7 +105,7 @@ header {
   display: inline-block;
   font-size: 1.5rem;
   color: #9fc7ec;
-  padding: 0.6rem 0.325rem 0.5rem;
+  padding: 0.65rem 0.325rem 0.5rem;
   justify-self: flex-start;
   align-self: flex-start;
   pointer-events: none;
