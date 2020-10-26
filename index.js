@@ -193,16 +193,6 @@ removeFavorites.addEventListener('click', function() {
 
 let inputText = '';
 
-// function selectFavorites() {
-//   const selectedHex = document.querySelectorAll(".favorite--color");
-//   const selectedHexArr = [...selectedHex];
-//   for (let i = 0; i < selectedHexArr.length; i++) {
-//     inputText += selectedHexArr[i].innerText + ", ";
-//   }
-//   inputText = inputText.replace(/,\s*$/, "");
-//   return inputText;
-// }
-
 clipboardIcon.addEventListener('click', () => {
   const selectedHex = document.querySelectorAll(".favorite--color");
   const selectedHexArr = [...selectedHex];

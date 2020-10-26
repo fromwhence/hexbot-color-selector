@@ -10,18 +10,21 @@
   <title>Hexbot Color Selector</title>
 </head>
 <body>
-  <header>
-    <h1 class="title">Hexbot</h1>
+  <div class="header-container">
+    <header>
+      <h1 class="title">Hexbot</h1>
+    </header>
     <div class="actions-container">
       <div id="refresh-colors">
         <i aria-label="Refresh color grid" class="fas fa-redo-alt"></i>
-        <span id="refresh-text">Colors</span>
+        <span id="refresh-text">Grid</span>
       </div>
       <div id="remove-favorites">
         <i class="fas fa-trash-alt"></i>
-        <span class="remove-text">Remove all</span>
+        <span class="remove-text">Delete likes</span>
+      </div>
     </div>
-  </header>
+  </div>
   <div class="favorite-colors-container">
     <i aria-label="Favorites" id="favorite-icon" class="fab fa-gratipay"></i>
     <ul id="favorite-colors"></ul>
@@ -29,6 +32,5 @@
   </div>
   <div id="color-grid">
   </div>
-  <!-- <textarea id="copied-content"></textarea> -->
 </body>
 </html>
