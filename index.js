@@ -5,19 +5,26 @@ const favoritesToolbar = document.getElementById('favorite-colors-container');
 const favoriteIcon = document.getElementById('favorite-icon');
 const clipboardIcon = document.getElementById('clipboard-icon');
 const removeFavorites = document.getElementById('remove-favorites');
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modal-content');
+const closeModal = document.getElementById('close-modal');
+
+// Close modal
+
+closeModal.addEventListener('click', function() {
+  modalContent.classList.add('close-modal');
+  modal.classList.add('fade-out');
+})
 
 // Sticky toolbar 
 
 let sticky = favoritesToolbar.offsetTop;
-console.log(sticky);
 
 function setStickyToolbar() {
   if (window.pageYOffset > sticky) {
-    console.log("It's sticky")
     favoritesToolbar.classList.add('sticky');
   } else {
     favoritesToolbar.classList.remove('sticky');
-    (console.log("Not sticky"))
   }
 }
 
