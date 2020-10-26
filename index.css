@@ -66,7 +66,7 @@ header {
 }
 
 #refresh-colors:hover i {
-  transform: rotate(35deg);
+  transform: rotate(30deg);
 }
 
 #remove-favorites {
@@ -135,10 +135,10 @@ header {
 #clipboard-icon:hover ,
 #clipboard-icon:focus i
  {
-  color: #222;
+  color: #394c5f;
 }
 
-/* Selected colors */
+/* Selected color tiles in favorites bar */
 
 #favorite-colors {
   display: block;
@@ -175,6 +175,17 @@ header {
   opacity: 0.9;
 }
 
+/* Sticky class added to favorites bar with JS when is reaches scroll position */
+#color-grid {
+  padding: 0;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 /* Color grid */
 
 #color-grid {
@@ -190,10 +201,6 @@ header {
   content: "";
   padding-bottom: 100%;
   display: block;
-}
-
-#color-grid {
-  max-lines: 3;
 }
 
 .my--color {
@@ -222,8 +229,9 @@ header {
 .my--color.selected,
 .my--color.selected span.hex--color,
 .my--color.selected .add--favorite {
-  opacity: 0.5 !important;
+  opacity: 0.6 !important;
   pointer-events: none;
+  filter: grayscale(25%);
 }
 
 .add--favorite {
