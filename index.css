@@ -89,8 +89,8 @@ header {
 
 /* Favorites bar */
 
-.favorite-colors-container {
-  position: relative;
+#favorite-colors-container {
+  /* position: relative; */
   width: 100%;
   height: auto;
   background-color: white;
@@ -99,13 +99,24 @@ header {
   align-items: center;
   flex-direction: row;
   padding-left: 0.5rem;
+  z-index: 99;
 }
 
-.favorite-colors-container i {
+/* Sticky class added to favorites bar with JS when is reaches scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.sticky + .content {
+  padding-top: 50px;
+}
+
+#favorite-colors-container i {
   display: inline-block;
   font-size: 1.5rem;
   color: #9fc7ec;
-  padding: 0.65rem 0.325rem 0.5rem;
+  padding: 0.7rem 0.325rem;
   justify-self: flex-start;
   align-self: flex-start;
   pointer-events: none;
@@ -113,12 +124,12 @@ header {
 
 #favorite-icon {
   font-size: 1.7rem;
-  padding-top: 0.5rem;
+  padding-top: 0.65rem;
 }
 
 #clipboard-icon {
   position: absolute;
-  padding-top: 0.6rem;
+  padding-top: 0.7rem;
   right: 0.8rem;
 }
 
@@ -144,10 +155,10 @@ header {
   display: block;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 0.425rem;
-  padding-bottom: 0.2rem;
-  margin-left: 0.4rem;
-  margin-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+  margin-left: 0.2rem;
+  margin-right: 2.625rem;
 }
 
 #favorite-colors li {
@@ -156,7 +167,7 @@ header {
   top: 0;
   list-style-type: none;
   font-size: 0.8em;
-  padding: 0.4em 0.9em 0.4em 0.75em;
+  padding: 0.6em 0.95em 0.6em 0.75em;
   margin: 0 0.4em 0.3em 0;
   cursor: pointer;
 }
@@ -173,17 +184,6 @@ header {
   top: 2px;
   right: 3px;
   opacity: 0.9;
-}
-
-/* Sticky class added to favorites bar with JS when is reaches scroll position */
-#color-grid {
-  padding: 0;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
 
 /* Color grid */
@@ -259,7 +259,7 @@ header {
     margin-bottom: 0.5rem;
   }
 
-  .favorite-colors-container {
+  #favorite-colors-container {
     padding-left: 1.5rem;
   }
 
@@ -293,7 +293,7 @@ header {
     padding-right: 2.25rem;
   }
 
-  .favorite-colors-container {
+  #favorite-colors-container {
     padding-left: 1.85rem;
   }
 

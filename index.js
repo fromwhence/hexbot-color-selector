@@ -1,9 +1,27 @@
 const urlBase = 'https://api.noopschallenge.com/hexbot?count=';
 const colorGrid = document.getElementById('color-grid');
 const refreshColors = document.getElementById('refresh-colors');
+const favoritesToolbar = document.getElementById('favorite-colors-container');
 const favoriteIcon = document.getElementById('favorite-icon');
 const clipboardIcon = document.getElementById('clipboard-icon');
 const removeFavorites = document.getElementById('remove-favorites');
+
+// Sticky toolbar 
+
+let sticky = favoritesToolbar.offsetTop;
+console.log(sticky);
+
+function setStickyToolbar() {
+  if (window.pageYOffset > sticky) {
+    console.log("It's sticky")
+    favoritesToolbar.classList.add('sticky');
+  } else {
+    favoritesToolbar.classList.remove('sticky');
+    (console.log("Not sticky"))
+  }
+}
+
+window.onscroll = () => setStickyToolbar();
 
 // Returns black or white color based on relative darkness of hexcolor
 getContrast = hexcolor => {
