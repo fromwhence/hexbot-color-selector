@@ -6,7 +6,7 @@ const clipboardIcon = document.getElementById('clipboard-icon');
 const removeFavorites = document.getElementById('remove-favorites');
 
 // Returns black or white color based on relative darkness of hexcolor
-function getContrast(hexcolor) {
+getContrast = hexcolor => {
 	// Removes leading #
 	if (hexcolor.slice(0, 1) === '#') {
 		hexcolor = hexcolor.slice(1);
@@ -22,7 +22,7 @@ function getContrast(hexcolor) {
   return (yiq >= 128) ? '#222' : 'white';
 };
 
-function displayColors(colors) {
+displayColors = colors => {
 
   let myColorsHtml = colors.map(color => {
     return `<div class="my--color" style="background: ${color.value};">
@@ -45,7 +45,7 @@ let colorCount;
 
 let windowWidth = window.innerWidth;
 
-function colorCountByWidth(windowWidth) {
+colorCountByWidth = windowWidth => {
 
   if (windowWidth < 576) {
     colorCount = 24;
@@ -91,7 +91,18 @@ window.onload = function() {
   colorGrid.style.opacity = 1;
 }
 
-// Add color to favorites - li approach
+activateIcons = () => {
+  favoriteIcon.classList.add('icon-active');
+  clipboardIcon.classList.add('icon-active');
+};
+
+resetIcons = () => {
+  removeFavorites.classList.remove('active');
+  favoriteIcon.classList.remove('icon-active');
+  clipboardIcon.classList.remove('icon-active');
+};
+
+// Add color to favorites
 document.addEventListener('click', function (event) {
   if (event.target.classList.contains('add--favorite')) {
     activateIcons();
@@ -118,11 +129,11 @@ document.addEventListener('click', function (event) {
 // Removes single color from favorites and activates corresponding color tile in grid
 // Convert rgb string from DOM into hexcode format to match innerText
 
-function rgbToHex(r, g, b) {
+rgbToHex = (r, g, b) => {
   return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
 
-document.addEventListener('click', function (event) {
+document.addEventListener('click', function(event) {
   if (event.target.classList.contains('favorite--color')) {
     let hexText = event.target.innerHTML;
     event.target.remove();
@@ -130,7 +141,6 @@ document.addEventListener('click', function (event) {
     // Resets favorite icon, clipboard icon, and remove all if no favorites remain
     if (document.getElementById('favorite-colors').firstChild === null) {
       resetIcons();
-
     }
 
     let hexMatches = document.querySelectorAll('.my--color.selected');
@@ -150,18 +160,6 @@ document.addEventListener('click', function (event) {
     }
   } 
 }, false);
-
-function activateIcons() {
-  removeFavorites.classList.add('active');
-  favoriteIcon.classList.add('icon-active');
-  clipboardIcon.classList.add('icon-active');
-};
-
-function resetIcons() {
-  removeFavorites.classList.remove('active');
-  favoriteIcon.classList.remove('icon-active');
-  clipboardIcon.classList.remove('icon-active');
-};
 
 // Remove all favorite colors using trashcan icon
 
@@ -185,41 +183,43 @@ removeFavorites.addEventListener('click', function() {
       } 
     }
   }
-  // Removes any favorites form previous color grid
+  // Removes any favorites from previous color grid
   for (let i = 0; i < hexFavorites.length; i++) {
     hexFavorites[i].remove();
   }
 });
 
-// Copy color hexcodes to clip board
-copiedHexCodes = "";
+// Copy hexcodes to clipboard
 
-clipboardIcon.addEventListener("click", copyText);
-function copyText() {
-  let copyText = document.querySelectorAll(".favorite--color");
+let inputText = '';
 
-  let copyTextArr = [...copyText];
-  
-  for (let i = 0; i < copyTextArr.length; i++) {
-    copiedHexCodes += copyTextArr[i].innerText + ", ";
+// function selectFavorites() {
+//   const selectedHex = document.querySelectorAll(".favorite--color");
+//   const selectedHexArr = [...selectedHex];
+//   for (let i = 0; i < selectedHexArr.length; i++) {
+//     inputText += selectedHexArr[i].innerText + ", ";
+//   }
+//   inputText = inputText.replace(/,\s*$/, "");
+//   return inputText;
+// }
+
+clipboardIcon.addEventListener('click', () => {
+  const selectedHex = document.querySelectorAll(".favorite--color");
+  const selectedHexArr = [...selectedHex];
+  for (let i = 0; i < selectedHexArr.length; i++) {
+    inputText += selectedHexArr[i].innerText + ", ";
   }
+  inputText = inputText.replace(/,\s*$/, "");
 
-  let formattedHexCodes = copiedHexCodes.replace(/,\s*$/, "");
-
-  let copyTextArea = document.getElementById('copied-content');
-  copyTextArea.innerHTML = formattedHexCodes;
-  copyTextArea.focus();
-  copyTextArea.select();
-
-  try {
-    let successful = document.execCommand('copy');
-    let msg = successful ? 'Successfully' : 'unsuccessful';
-    alert(`${msg} copied ${formattedHexCodes} to the clipboard.`);
-  } catch(err) {
-    alert('Unable to copy');
-  }
-  copiedHexCodes = "";
-}
+  navigator.clipboard
+    .writeText(inputText)
+    .then(function() {
+      alert('✔︎ Copied to clipboard.');
+    })
+    .catch(err => {
+      alert('Something went wrong', err);
+    })
+});
 
 
 
