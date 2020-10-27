@@ -81,7 +81,7 @@ let windowWidth = window.innerWidth;
 colorCountByWidth = windowWidth => {
 
   if (windowWidth < 576) {
-    colorCount = 24;
+    colorCount = 36;
   }
   if (windowWidth >= 576) {
     colorCount = 48;
@@ -237,12 +237,14 @@ clipboardIcon.addEventListener('click', () => {
   navigator.clipboard
     .writeText(inputText)
     .then(function() {
-      alert('✔︎ Copied to clipboard.');
+      alert(`✔︎ Hex color codes copied to clipboard.`);
     })
     .catch(err => {
       alert('Something went wrong', err);
     })
+  inputText = '';
 });
+
 
 
 
