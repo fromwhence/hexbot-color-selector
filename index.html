@@ -10,24 +10,24 @@
   <title>Hexbot Color Selector</title>
 </head>
 <body>
-  <div id="modal">
-    <div id="modal-content">
-      <span aria-label="Close modal" id="close-modal">&#215;</span>
+  <div id="modal" class="fade-in">
+    <div id="modal-content" class="open-modal">
+      <div aria-label="Close instructions" id="close-modal-icon"><i class="fas fa-caret-square-up"></i></div>
       <p>About and how to use:</p>
       <ul id="instructions">
         <li>Colors are generated at random using the Hexbot API.</li>
         <li>Select the refresh icon to view a new grid of colors.</li>
-        <li>To save a color, select its plus sign.</li>
-        <li>The hexcodes of saved colors can be copied to the clipboard by selecting the clipboard icon.</li>
+        <li>To save a hex code, select its plus sign.</li>
+        <li>The hex codes of saved colors can be copied to the clipboard by selecting the clipboard icon.</li>
         <li>Colors can be removed individually from favorites be selecting them.</li>
         <li>Delete all favorites by using the trashcan icon.</li>
       </ul>
     </div>
   </div>
-
   <div class="header-container">
     <header>
       <h1 class="title">Hexbot</h1>
+      <div id="open-modal-icon"><i class="fas fa-caret-square-down"></i></div>
     </header>
     <div class="actions-container">
       <div id="refresh-colors">

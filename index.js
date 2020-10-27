@@ -7,17 +7,25 @@ const clipboardIcon = document.getElementById('clipboard-icon');
 const removeFavorites = document.getElementById('remove-favorites');
 const modal = document.getElementById('modal');
 const modalContent = document.getElementById('modal-content');
-const closeModal = document.getElementById('close-modal');
+const closeModalIcon = document.getElementById('close-modal-icon');
+const openModalIcon = document.getElementById('open-modal-icon');
 
-// Close modal
-
-closeModal.addEventListener('click', function() {
-  modalContent.classList.add('close-modal');
+// Instructions modal
+closeModalIcon.addEventListener('click', function() {
+  modal.classList.remove('fade-in');
+  modalContent.classList.remove('open-modal');
   modal.classList.add('fade-out');
+  modalContent.classList.add('close-modal');
+})
+
+openModalIcon.addEventListener('click', function() {
+  modal.classList.remove('fade-out');
+  modalContent.classList.remove('close-modal');
+  modal.classList.add('fade-in');
+  modalContent.classList.add('open-modal');
 })
 
 // Sticky toolbar 
-
 let sticky = favoritesToolbar.offsetTop;
 
 function setStickyToolbar() {
