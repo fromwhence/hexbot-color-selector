@@ -133,7 +133,8 @@ a:hover, a:active {
 #modal-content p {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
+  margin-left: 0.25rem;
 }
 
 #modal-content ul {
@@ -272,6 +273,7 @@ a:hover, a:active {
 #favorite-colors-container.sticky {
   position: fixed;
   top: 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);;
 }
 
 #favorite-colors-container.sticky + .content {
