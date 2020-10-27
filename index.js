@@ -16,6 +16,7 @@ closeModalIcon.addEventListener('click', function() {
   modalContent.classList.remove('open-modal');
   modal.classList.add('fade-out');
   modalContent.classList.add('close-modal');
+  colorGrid.classList.remove('no-pointer');
 })
 
 openModalIcon.addEventListener('click', function() {
@@ -23,6 +24,7 @@ openModalIcon.addEventListener('click', function() {
   modalContent.classList.remove('close-modal');
   modal.classList.add('fade-in');
   modalContent.classList.add('open-modal');
+  colorGrid.classList.add('no-pointer');
 })
 
 // Sticky toolbar 
