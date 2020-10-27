@@ -32,13 +32,22 @@ header {
   cursor: default;
 }
 
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
 #open-modal-icon i,
 #close-modal-icon i {
  position: absolute;
- font-size: 1.7rem;
- color: #80abd3;
- right: 0.2rem;
- top: 0.2rem;
+ font-size: 1.9rem;
+ color: #7ca5cc;
+ right: 0.15rem;
+ top: 0.25rem;
  padding: 0.7rem 0.9rem;
  cursor: pointer;
 }
@@ -47,13 +56,13 @@ header {
 #open-modal-icon i:focus,
 #close-modal-icon i:hover,
 #close-modal-icon i:focus {
-  color: #515d69;
+  color: #404a53;;
 }
 
-#close-modal-icon i {
+/* #close-modal-icon i {
   right: 0.2rem;
   top: 87%;
-}
+} */
 
 /* Instructions modal */
 #modal {
@@ -88,10 +97,11 @@ header {
 
 #modal-content {
   position: relative;
+  color: #404a53;
   background-color: #cce6ff;
   font-size: 0.9rem;
   margin: auto;
-  padding: 2rem 1.85rem 2.2rem 1.85rem;
+  padding: 2rem 1.75rem 2rem 1.75rem;
   z-index: 4;
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);
@@ -122,10 +132,18 @@ header {
 #modal-content ul {
   list-style-type: disc;
   list-style-position: inside;
+  background-color: white;
+  padding: 1.35rem;
+  border: 1px solid #77899b;
+  border-radius: 0.4rem;
 }
 
 #modal-content li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+#modal-content li:last-of-type {
+  margin-bottom: 0.625rem;
 }
 
 /* Animation */
@@ -181,7 +199,7 @@ header {
   font-size: 0.9rem;
   font-weight: 600;
   height: auto;
-  padding: 0.6rem 0.9rem 0.6rem 1.1rem;
+  padding: 0.6rem 1rem 0.6rem 1.1rem;
 }
 
 #refresh-colors {
@@ -243,12 +261,12 @@ header {
 }
 
 /* Sticky class added to favorites bar with JS when is reaches scroll position */
-.sticky {
+#favorite-colors-container.sticky {
   position: fixed;
   top: 0;
 }
 
-.sticky + .content {
+#favorite-colors-container.sticky + .content {
   padding-top: 50px;
 }
 
@@ -262,13 +280,13 @@ header {
 
 #favorite-icon  {
   font-size: 2rem;
-  margin: 0.1rem 0 0.275rem 0;
+  margin: 0.05rem 0 0.275rem 0;
 }
 
 #clipboard-icon {
   font-size: 1.3rem;
   position: absolute;
-  right: 0.6em;
+  right: 0.7em;
   top: 0.4rem;
   padding: 0.4rem 0.45rem;
   border-radius: 5px;
@@ -310,7 +328,7 @@ header {
   list-style-type: none;
   font-size: 0.8em;
   padding: 0.6em 0.9em 0.6em 0.75em;
-  margin: 0 0.4em 0.3em 0;
+  margin: 0 0.4em 0.325em 0;
   cursor: pointer;
 }
 
