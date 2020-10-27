@@ -443,7 +443,7 @@ a:hover, a:active {
   }
 
   #favorite-colors-container {
-    padding-left: 1.2srem;
+    padding-left: 1.1rem;
   }
 
   #clipboard-icon {
@@ -458,17 +458,94 @@ a:hover, a:active {
   #favorite-colors li {
     margin: 0 0.625em 0.325em 0;
   }
-
-
 }
 
 @media (min-width: 768px) {
   #modal-content {
     width: 55%;
   }
+
+  #modal-content p {
+    margin-bottom: 1.25rem;
+  }
+
+  .title {
+    padding: 1.75rem 1.375rem;
+  }
+
+  #open-modal-icon i {
+    font-size: 2rem;
+    right: 0.4rem;
+    top: 0.3rem;
+  }
+
+  .actions-container {  
+    padding: 0.5rem 1.375rem;
+  }
+
+  #favorite-colors-container {
+    padding-left: 1.2rem;
+  }
+
+  #clipboard-icon {
+    right: 1em;
+  }
+
+  #favorite-colors {
+    margin-left: 1.2rem;
+  }
+
+  #favorite-colors li {
+    margin: 0 0.625em 0.325em 0;
+  }
 }
 
 @media (min-width: 1024px) {
+  #modal-content {
+    width: 40%;
+    margin-top: 4rem;
+  }
+
+  #modal-content p {
+    margin-bottom: 1.3rem;
+  }
+
+  .title {
+    padding: 1.85rem 1.75rem;
+  }
+
+  #open-modal-icon i {
+    font-size: 2rem;
+    right: 0.8rem;
+    top: 0.45rem;
+  }
+
+  .actions-container {  
+    padding: 0.5rem 1.8rem;
+  }
+
+  #favorite-icon  {
+    font-size: 2.2rem;
+    margin-bottom: 0.275rem;
+  }
+
+  #favorite-colors-container {
+    padding-left: 1.625rem;
+  }
+
+  #clipboard-icon {
+    font-size: 1.45rem;
+    right: 1.7rem;
+    top: 0.45rem;
+    padding: 0.35rem 0.45rem;
+  }
+
+  #favorite-colors li {
+    margin: 0 0.7em 0.325em 0;
+    font-size: 0.85em;
+    padding: 0.6em 1em 0.6em 0.8em;
+  }
+
 }
 
 @media (min-width: 1200px) {

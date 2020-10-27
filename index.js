@@ -89,7 +89,7 @@ colorCountByWidth = windowWidth => {
     colorCount = 48;
   }
   if (windowWidth >= 768) {
-    colorCount = 66;
+    colorCount = 72;
   }
   if (windowWidth >= 1024) {
     colorCount = 96;
@@ -192,6 +192,13 @@ document.addEventListener('click', function(event) {
         hexMatch.classList.remove('selected');
         hexMatch.firstChild.nextSibling.innerHTML = '&#43;';
       }
+    }
+
+    let hexFavorites = document.querySelectorAll('.favorite--color');
+    let hexFavoritesArr = [...hexFavorites];
+  
+    if (hexFavoritesArr.length < 2) { 
+      removeFavorites.classList.remove('active');
     }
   } 
 }, false);
