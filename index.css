@@ -291,14 +291,15 @@ a:hover, a:active {
 
 #favorite-icon  {
   font-size: 2rem;
-  margin-bottom: 0.25rem;
+  /* margin-top: 0.1rem; */
+  margin-bottom: 0.275rem;
 }
 
 #clipboard-icon {
   font-size: 1.3rem;
   position: absolute;
   right: 0.7em;
-  top: 0.375rem;
+  top: 0.4rem;
   padding: 0.35rem 0.45rem;
   border-radius: 5px;
   border: 2px solid #9fc7ec;
