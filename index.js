@@ -116,15 +116,18 @@ async function getColors(colorCount) {
 
 getColors(colorCount);
 
+window.addEventListener('load', (event) => {
+  colorGrid.style.opacity = '1';
+});
+
 // Refresh colors using refresh icon
 refreshColors.addEventListener('click', function() {
   getColors(colorCount);
+  colorGrid.classList.add('fade-transition');
+  setTimeout(function(){ 
+    colorGrid.classList.remove('fade-transition');
+  }, 2000);
 })
-
-// Fade in on reload
-window.onload = function() {
-  colorGrid.style.opacity = 1;
-}
 
 activateIcons = () => {
   favoriteIcon.classList.add('icon-active');

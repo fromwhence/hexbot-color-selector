@@ -178,23 +178,23 @@ a:hover, a:active {
 }
 
 @keyframes animateDown {
-  from {top: -500px;}
+  from {top: -600px;}
   to {top: 0;}
 }
 
 @-webkit-keyframes animateDown {
-  from {top:-500px;} 
+  from {top:-600px;} 
   to {top: 0;}
 }
 
 @keyframes animateUp {
   from {top: 0;}
-  to {top: -500px;}
+  to {top: -600px;}
 }
 
 @-webkit-keyframes animateUp {
   from {top: 0;}
-  to {top: -500px;}
+  to {top: -600px;}
 }
 
 /* Tool bar */
@@ -366,7 +366,25 @@ a:hover, a:active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   grid-gap: 2px;
-  transition: 500ms;
+  transition: opacity 500ms;
+}
+
+@keyframes gridFadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+#color-grid.fade-transition {
+  animation-name: gridTransition;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes gridTransition {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 #color-grid.no-pointer {
@@ -392,7 +410,7 @@ a:hover, a:active {
 }
 
 .hex--color {
-  transition: opacity 200ms;
+  transition: opacity 300ms;
 }
 
 .my--color:hover span.hex--color,
