@@ -266,7 +266,7 @@ a:hover, a:active {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  padding: 0.5rem 1rem 0.2rem 1rem;
+  padding: 0.5rem 1rem 0.215rem 1rem;
   z-index: 2;
 }
 
@@ -292,7 +292,7 @@ a:hover, a:active {
 #favorite-icon  {
   font-size: 2rem;
   /* margin-top: 0.1rem; */
-  margin-bottom: 0.275rem;
+  margin-bottom: 0.27rem;
 }
 
 #clipboard-icon {
