@@ -382,7 +382,7 @@ a:hover, a:active {
 
 .my--color {
   position: relative;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   display: flex;
   justify-content: center;
@@ -428,6 +428,7 @@ a:hover, a:active {
 @media (min-width: 576px) {
   #modal-content {
     width: 70%;
+    max-width: 450px;
     padding: 1.85rem 1.5rem 1.6rem 1.5rem;
   }
 
@@ -460,6 +461,10 @@ a:hover, a:active {
 
   #favorite-colors li {
     margin: 0 0.625em 0.325em 0;
+  }
+
+  .my--color {
+    font-size: 0.85rem;
   }
 }
 
@@ -501,6 +506,7 @@ a:hover, a:active {
   #favorite-colors li {
     margin: 0 0.625em 0.325em 0;
   }
+
 }
 
 @media (min-width: 1024px) {
@@ -544,7 +550,7 @@ a:hover, a:active {
   }
 
   #favorite-colors li {
-    margin: 0 0.7em 0.325em 0;
+    margin: 0 0.75em 0.325em 0;
     font-size: 0.85em;
     padding: 0.6em 1em 0.6em 0.8em;
   }
@@ -552,4 +558,8 @@ a:hover, a:active {
 }
 
 @media (min-width: 1200px) {
+  #modal-content {
+    width: 35%;
+    margin-top: 8.75rem;
+  }
 }

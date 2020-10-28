@@ -94,7 +94,7 @@ colorCountByWidth = windowWidth => {
     colorCount = 132;
   }
   if (windowWidth >= 1440) {
-    colorCount = 154;
+    colorCount = 156;
   }
   return colorCount;
 }
