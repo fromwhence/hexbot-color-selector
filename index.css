@@ -56,7 +56,7 @@ a:hover, a:active {
 #open-modal-icon i:focus,
 #close-modal-icon i:hover,
 #close-modal-icon i:focus {
-  color: #404a53;;
+  color: #404a53;
 }
 
 /* #close-modal-icon i {
@@ -200,8 +200,8 @@ a:hover, a:active {
 /* Tool bar */
 
 .actions-container {
-  background-color: #515d69;
-  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(81,93,105,1) 75%, rgba(81,93,105,1) 100%);
+  background-color: #5a6774;
+  /* background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%, rgba(81,93,105,1) 75%, rgba(81,93,105,1) 100%); */
   color: white;
   display: flex;
   justify-content: space-between;
@@ -209,8 +209,9 @@ a:hover, a:active {
   font-size: 0.9rem;
   font-weight: 600;
   height: auto;
-  padding: 0.45rem 1rem 0.55rem 1.1rem;
-  border-top: 1px solid #404a53;
+  padding: 0.5rem 1rem 0.5rem 1.1rem;
+  border-top: 1px solid #515d69;
+  border-bottom: 1px solid #515d69;
 }
 
 #refresh-colors {
@@ -300,7 +301,7 @@ a:hover, a:active {
   font-size: 1.3rem;
   position: absolute;
   right: 0.75em;
-  top: 0.425rem;
+  top: 0.435rem;
   padding: 0.3rem 0.4rem;
   border-radius: 5px;
   border: 2px solid #9fc7ec;
@@ -314,14 +315,13 @@ a:hover, a:active {
   color: white;
   pointer-events: all;
   cursor: pointer;
-  background-color: #515d69;
-  border-color: #515d69;
+  background-color: #5a6774;
+  border-color: #5a6774;
 }
 
 #clipboard-icon:hover ,
 #clipboard-icon:focus i {
   color: #86fc1e;
-  border: 1px solid #515d69;
 }
 
 /* Selected color tiles in favorites bar */

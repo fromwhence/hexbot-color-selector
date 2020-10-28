@@ -54,7 +54,7 @@ getContrast = hexcolor => {
 	// Get YIQ ratio
 	let yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
 	// Check contrast
-  return (yiq >= 128) ? '#222' : 'white';
+  return (yiq >= 128) ? '#333' : 'white';
 };
 
 displayColors = colors => {
