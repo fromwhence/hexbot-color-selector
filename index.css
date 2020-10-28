@@ -209,6 +209,7 @@ a:hover, a:active {
   font-weight: 600;
   height: auto;
   padding: 0.5rem 1rem 0.5rem 1.1rem;
+  border-top: 1px solid #404a53;
 }
 
 #refresh-colors {
@@ -265,7 +266,7 @@ a:hover, a:active {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  padding: 0.5rem 1rem 0.25rem 1rem;
+  padding: 0.5rem 1rem 0.2rem 1rem;
   z-index: 2;
 }
 
@@ -290,14 +291,14 @@ a:hover, a:active {
 
 #favorite-icon  {
   font-size: 2rem;
-  margin-bottom: 0.275rem;
+  margin-bottom: 0.25rem;
 }
 
 #clipboard-icon {
   font-size: 1.3rem;
   position: absolute;
   right: 0.7em;
-  top: 0.45rem;
+  top: 0.375rem;
   padding: 0.35rem 0.45rem;
   border-radius: 5px;
   border: 2px solid #9fc7ec;
@@ -312,7 +313,7 @@ a:hover, a:active {
   pointer-events: all;
   cursor: pointer;
   background-color: #515d69;
-  border: 1px solid #515d69;
+  border-color: #515d69;
 }
 
 #clipboard-icon:hover ,
@@ -448,7 +449,7 @@ a:hover, a:active {
 
   #clipboard-icon {
     right: 0.85em;
-    top: 0.425rem;
+    top: 0.4125rem;
   }
 
   #favorite-colors {
@@ -522,6 +523,7 @@ a:hover, a:active {
 
   .actions-container {  
     padding: 0.5rem 1.8rem;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(81,93,105,1) 45%, rgba(81,93,105,1) 100%);
   }
 
   #favorite-icon  {
