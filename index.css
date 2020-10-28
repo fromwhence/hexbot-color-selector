@@ -266,7 +266,7 @@ a:hover, a:active {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  padding: 0.5rem 1rem 0.215rem 1rem;
+  padding: 0.5rem 1rem 0.225rem 1rem;
   z-index: 2;
 }
 
@@ -292,15 +292,15 @@ a:hover, a:active {
 #favorite-icon  {
   font-size: 2rem;
   /* margin-top: 0.1rem; */
-  margin-bottom: 0.27rem;
+  margin-bottom: 0.265rem;
 }
 
 #clipboard-icon {
   font-size: 1.3rem;
   position: absolute;
-  right: 0.7em;
-  top: 0.4rem;
-  padding: 0.35rem 0.45rem;
+  right: 0.75em;
+  top: 0.425rem;
+  padding: 0.3rem 0.4rem;
   border-radius: 5px;
   border: 2px solid #9fc7ec;
 }
@@ -449,8 +449,8 @@ a:hover, a:active {
   }
 
   #clipboard-icon {
-    right: 0.85em;
-    top: 0.4125rem;
+    right: 0.95em;
+    top: 0.4725;
   }
 
   #favorite-colors {
