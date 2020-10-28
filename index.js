@@ -58,7 +58,6 @@ getContrast = hexcolor => {
 };
 
 displayColors = colors => {
-
   let myColorsHtml = colors.map(color => {
     return `<div class="my--color" style="background: ${color.value};">
               <span class="add--favorite" 
@@ -70,18 +69,15 @@ displayColors = colors => {
                 opacity: 0;">${color.value}
               </span>
             </div>`
-  }).join('') // myColorsHtml is an array. .join('') converts to avstring
-
+  }).join('') // myColorsHtml is an array, .join('') converts to a string
   colorGrid.innerHTML = `${myColorsHtml}`;
 }
 
 // Determine color count based on viewport width
 let colorCount;
-
 let windowWidth = window.innerWidth;
 
 colorCountByWidth = windowWidth => {
-
   if (windowWidth < 576) {
     colorCount = 36;
   }
@@ -103,15 +99,19 @@ colorCountByWidth = windowWidth => {
   return colorCount;
 }
 
-console.log(`Initial window width is ${windowWidth}.`);
-console.log(`Initial color count is ${colorCountByWidth(windowWidth)}.`);
+colorCountByWidth(windowWidth);
 
 async function getColors(colorCount) {
   const url = urlBase + colorCount;
-  let response = await fetch(url);
-  let data = await response.json();
-  let colors = data.colors;
-  displayColors(colors)
+  try {
+    let response = await fetch(url);
+    let data = await response.json();
+    let colors = data.colors;
+    displayColors(colors);
+  }
+  catch(e) {
+    console.log(e)
+  }
 }
 
 getColors(colorCount);
@@ -237,6 +237,7 @@ let inputText = '';
 
 clipboardIcon.addEventListener('click', () => {
   const selectedHex = document.querySelectorAll(".favorite--color");
+  console.log(selectedHex);
   const selectedHexArr = [...selectedHex];
   for (let i = 0; i < selectedHexArr.length; i++) {
     inputText += selectedHexArr[i].innerText + ", ";

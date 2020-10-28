@@ -201,6 +201,7 @@ a:hover, a:active {
 
 .actions-container {
   background-color: #515d69;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(81,93,105,1) 75%, rgba(81,93,105,1) 100%);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -208,7 +209,7 @@ a:hover, a:active {
   font-size: 0.9rem;
   font-weight: 600;
   height: auto;
-  padding: 0.5rem 1rem 0.5rem 1.1rem;
+  padding: 0.45rem 1rem 0.55rem 1.1rem;
   border-top: 1px solid #404a53;
 }
 
@@ -524,7 +525,6 @@ a:hover, a:active {
 
   .actions-container {  
     padding: 0.5rem 1.8rem;
-    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(81,93,105,1) 45%, rgba(81,93,105,1) 100%);
   }
 
   #favorite-icon  {
