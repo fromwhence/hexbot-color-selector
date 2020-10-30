@@ -81,17 +81,17 @@ a:hover, a:active {
 
 #modal.fade-in {
   -webkit-animation-name: animateFadeIn;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.5s;
   animation-name: animateFadeIn;
-  animation-duration: 0.4s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 
 #modal.fade-out {
   -webkit-animation-name: animateFadeOut;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.7s;
   animation-name: animateFadeOut;
-  animation-duration: 0.4s;
+  animation-duration: 0.7s;
   animation-fill-mode: forwards;
 }
 
@@ -106,9 +106,7 @@ a:hover, a:active {
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);
   -webkit-animation-name: animateDown;
-  -webkit-animation-duration: 0.4s;
   animation-name: animateDown;
-  animation-duration: 0.4s;
   pointer-events: auto;
 }
 
@@ -127,7 +125,9 @@ a:hover, a:active {
 #modal-content.close-modal {
   -webkit-animation-name: animateUp;
   animation-name: animateUp;
+  -webkit-animation-duration: 0.5s;
   animation-fill-mode: forwards;
+  animation-duration: 0.5s;
 }
 
 #modal-content p {
