@@ -89,9 +89,9 @@ a:hover, a:active {
 
 #modal.fade-out {
   -webkit-animation-name: animateFadeOut;
-  -webkit-animation-duration: 0.6s;
+  -webkit-animation-duration: 0.4s;
   animation-name: animateFadeOut;
-  animation-duration: 0.6s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
 }
 
