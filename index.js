@@ -1,7 +1,7 @@
 const urlBase = 'https://api.noopschallenge.com/hexbot?count=';
 const colorGrid = document.getElementById('color-grid');
 const refreshColors = document.getElementById('refresh-colors');
-const favoritesToolbar = document.getElementById('favorite-colors-container');
+const stickyToolbars = document.getElementById('sticky-toolbars');
 const favoriteIcon = document.getElementById('favorite-icon');
 const clipboardIcon = document.getElementById('clipboard-icon');
 const removeFavorites = document.getElementById('remove-favorites');
@@ -28,13 +28,13 @@ openModalIcon.addEventListener('click', function() {
 })
 
 // Sticky toolbar 
-let sticky = favoritesToolbar.offsetTop;
+let sticky = stickyToolbars.offsetTop;
 
 function setStickyToolbar() {
   if (window.pageYOffset > sticky) {
-    favoritesToolbar.classList.add('sticky');
+    stickyToolbars.classList.add('sticky');
   } else {
-    favoritesToolbar.classList.remove('sticky');
+    stickyToolbars.classList.remove('sticky');
   }
 }
 
@@ -114,7 +114,6 @@ async function getColors(colorCount) {
   }
 }
 
-console.log(`Color quantity: ${colorCount}`);
 getColors(colorCount);
 
 window.addEventListener('load', (event) => {

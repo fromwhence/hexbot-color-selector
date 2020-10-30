@@ -68,7 +68,7 @@ a:hover, a:active {
 #modal {
   display: block;
   position: fixed;
-  z-index: 3;
+  z-index: 2;
   opacity: 1;
   left: 0;
   top: 0;
@@ -102,11 +102,13 @@ a:hover, a:active {
   font-size: 0.9rem;
   margin: auto;
   padding: 1.625rem 1.25rem 1.25rem 1.25rem;
-  z-index: 4;
+  z-index: 3;
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);
   -webkit-animation-name: animateDown;
+  -webkit-animation-duration: 0.5s;
   animation-name: animateDown;
+  animation-duration: 0.5s;
   pointer-events: auto;
 }
 
@@ -209,7 +211,7 @@ a:hover, a:active {
   font-weight: 600;
   letter-spacing: 0;
   height: auto;
-  padding: 0.5rem 1rem 0.5rem 1.1rem;
+  padding: 0.5rem 1.1rem 0.5rem 1.1rem;
   border-top: 1px solid #515d69;
   border-bottom: 1px solid #515d69;
 }
@@ -296,18 +298,6 @@ a:hover, a:active {
   align-items: center;
   flex-direction: row;
   padding: 0.5rem 1rem 0.225rem 1rem;
-  z-index: 2;
-}
-
-/* Sticky class added to favorites bar with JS when is reaches scroll position */
-#favorite-colors-container.sticky {
-  position: fixed;
-  top: 0;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);;
-}
-
-#favorite-colors-container.sticky + .content {
-  padding-top: 50px;
 }
 
 #favorite-icon,
@@ -384,6 +374,19 @@ a:hover, a:active {
   top: 2px;
   right: 3px;
   opacity: 0.9;
+}
+
+/* Sticky class added to favorites bar with JS when is reaches scroll position */
+#sticky-toolbars.sticky {
+  z-index: 4;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);;
+}
+
+#sticky-toolbars.sticky + .content {
+  padding-top: 50px;
 }
 
 /* Color grid */

@@ -95,7 +95,6 @@ sortByHue.addEventListener('click', function() {
     sortIcon.classList.remove('fa-sort');
     sortIcon.classList.add('fa-random');
     displaySortedColors(sortedColors);
-    console.log(sortedColors);
     fadeTransition();
   } 
   else {
@@ -104,7 +103,6 @@ sortByHue.addEventListener('click', function() {
     sortIcon.classList.add('fa-sort');
     let shuffledColors = shuffleColors(hexToSort);
     displaySortedColors(shuffledColors);
-    console.log(shuffledColors);
     fadeTransition();
   };
   
