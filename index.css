@@ -377,7 +377,7 @@ a:hover, a:active {
 }
 
 /* Sticky class added to favorites bar with JS when is reaches scroll position */
-#sticky-toolbars.sticky {
+#favorite-colors-container.sticky {
   z-index: 4;
   width: 100%;
   position: fixed;
@@ -385,7 +385,7 @@ a:hover, a:active {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);;
 }
 
-#sticky-toolbars.sticky + .content {
+#favorite-colors-container.sticky + .content {
   padding-top: 50px;
 }
 
