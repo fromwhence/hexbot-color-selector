@@ -135,6 +135,7 @@ a:hover, a:active {
   font-weight: 600;
   margin-bottom: 1rem;
   margin-left: 0.25rem;
+  word-spacing: -1px;
 }
 
 #modal-content ul {
@@ -149,6 +150,7 @@ a:hover, a:active {
 #modal-content li {
   margin-bottom: 0.9rem;
   line-height: 1.5;
+  word-spacing: -1px;
 }
 
 #modal-content li:last-of-type {
@@ -201,36 +203,56 @@ a:hover, a:active {
 
 .actions-container {
   background-color: #5a6774;
-  /* background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%, rgba(81,93,105,1) 75%, rgba(81,93,105,1) 100%); */
   color: white;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-size: 0.9rem;
   font-weight: 600;
+  letter-spacing: 0;
   height: auto;
   padding: 0.5rem 1rem 0.5rem 1.1rem;
   border-top: 1px solid #515d69;
   border-bottom: 1px solid #515d69;
 }
 
-#refresh-colors {
+#refresh-colors, 
+#sort-by-hue,
+#remove-favorites  {
   display: flex;
-  letter-spacing: 0;
+  align-items: center;
   transition: color 200ms;
   cursor: pointer;
+  width: 33.33%;
+  /* border: 1px solid red; */
 }
 
-#refresh-text {
-  margin-left: 0.5rem;
+#refresh-colors {
+  justify-content: flex-start;
 }
 
-#refresh-colors:hover {
-  color: #d9eafa;
+#sort-by-hue {
+  justify-content: center;
+  visibility: visible;
+}
+
+#remove-favorites {
+  justify-content: flex-end;
+}
+
+
+#refresh-colors:hover,
+#refresh-colors:focus,
+#sort-by-hue:hover,
+#sort-by-hue:focus {
+  color: #ddefff;
+}
+
+#refresh-colors i, 
+#sort-by-hue i,
+#remove-favorites i {
+  margin-right: 0.5rem;
 }
 
 #refresh-colors i {
-  padding-top: 0.2rem;
   transition: transform 200ms;
   transform: rotate(-7deg);
 }
@@ -239,13 +261,18 @@ a:hover, a:active {
   transform: rotate(30deg);
 }
 
+#sort-by-hue i {
+  font-size: 1.1rem;
+}
+
+.sort-by-text {
+  word-spacing: -3px;
+}
+
 #remove-favorites {
   cursor: pointer;
   visibility: hidden;
-}
 
-.remove-text {
-  margin-left: 0.2rem;
 }
 
 #remove-favorites.active {
@@ -407,6 +434,10 @@ a:hover, a:active {
   align-items: center;
   cursor: pointer;
   opacity: 1 !important;
+  /* border-top: 1px solid #cce6ff;
+  border-left: 1px solid #cce6ff;
+  border-right: 1px solid #515d69;
+  border-bottom: 1px solid #515d69; */
 }
 
 .hex--color {
@@ -461,7 +492,7 @@ a:hover, a:active {
   }
 
   .actions-container {  
-    padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+    padding: 0.5rem 1.25rem;
   }
 
   #favorite-colors-container {

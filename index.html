@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" href="images/favicon-color-wheel.png">
   <link href="index.css" rel="stylesheet">
   <script src="index.js" defer></script>
+  <script src="sort.js" defer></script>
   <script src="https://kit.fontawesome.com/0e8ff5a22e.js" crossorigin="anonymous"></script>
   <title>HexSpire Color Selector</title>
 </head>
@@ -16,7 +17,7 @@
       <p>About and how to use:</p>
       <ul id="instructions">
         <li>Colors are generated at random using the <a href="https://noopschallenge.com/challenges/hexbot" target="_blank">Hexbot API</a>.</li>
-        <li>Select the refresh icon to view a new set of colors. The larger the viewing area, the more colors will be displayed.</li>
+        <li>Select the refresh icon to view a new set of colors or sort the current grid by hue.</li>
         <li>To add a color to your favorites, select its plus sign.</li>
         <li>The hex codes of saved colors can be copied to the clipboard by using the clipboard icon.</li>
         <li>Colors can be removed individually from favorites by selecting the color tile or removed all at once by using the trashcan.</li>
@@ -31,11 +32,15 @@
     <div class="actions-container">
       <div id="refresh-colors">
         <i aria-label="Refresh color grid" class="fas fa-redo-alt"></i>
-        <span id="refresh-text">Colors</span>
+        <span class="refresh-text">Colors</span>
+      </div>
+      <div id="sort-by-hue">
+        <i id="sort-icon" class="fas fa-sort"></i>
+        <span class="sort-by-text">By Hue</span>
       </div>
       <div id="remove-favorites">
         <i class="fas fa-trash-alt"></i>
-        <span class="remove-text">Delete</span>
+        <span class="remove-text">Likes</span>
       </div>
     </div>
   </div>

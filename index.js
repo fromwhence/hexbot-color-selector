@@ -114,20 +114,12 @@ async function getColors(colorCount) {
   }
 }
 
+console.log(`Color quantity: ${colorCount}`);
 getColors(colorCount);
 
 window.addEventListener('load', (event) => {
   colorGrid.style.opacity = '1';
 });
-
-// Refresh colors using refresh icon
-refreshColors.addEventListener('click', function() {
-  getColors(colorCount);
-  colorGrid.classList.add('fade-transition');
-  setTimeout(function(){ 
-    colorGrid.classList.remove('fade-transition');
-  }, 2000);
-})
 
 activateIcons = () => {
   favoriteIcon.classList.add('icon-active');
@@ -139,6 +131,26 @@ resetIcons = () => {
   favoriteIcon.classList.remove('icon-active');
   clipboardIcon.classList.remove('icon-active');
 };
+
+fadeTransition = () => {
+  colorGrid.classList.add('fade-transition');
+  setTimeout(function(){ 
+    colorGrid.classList.remove('fade-transition');
+  }, 2000);
+}
+
+// Refresh colors using refresh icon
+refreshColors.addEventListener('click', function() {
+  let sortByText = document.getElementsByClassName('sort-by-text')[0];
+  let sortIcon = document.getElementById('sort-icon');
+  sortByText.textContent = 'By Hue';
+  sortIcon.classList.add('fa-random');
+  sortIcon.classList.add('fa-sort');
+
+  getColors(colorCount);
+  fadeTransition();
+})
+
 
 // Add color to favorites
 document.addEventListener('click', function (event) {
@@ -163,6 +175,8 @@ document.addEventListener('click', function (event) {
     removeFavorites.classList.add('active');
   }
 }, false);
+
+
 
 // Removes single color from favorites and activates corresponding color tile in grid
 // Convert rgb string from DOM into hexcode format to match innerText
@@ -240,7 +254,6 @@ let inputText = '';
 
 clipboardIcon.addEventListener('click', () => {
   const selectedHex = document.querySelectorAll(".favorite--color");
-  console.log(selectedHex);
   const selectedHexArr = [...selectedHex];
   for (let i = 0; i < selectedHexArr.length; i++) {
     inputText += selectedHexArr[i].innerText + ", ";
