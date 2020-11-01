@@ -108,7 +108,11 @@ sortGrid = () => {
 };
 
 sortByHue.addEventListener('click', sortGrid);
+
 refreshColors.addEventListener('click', function() {
+  sortByText.textContent = 'By Hue';
+  sortIcon.classList.remove('fa-random');
+  sortIcon.classList.add('fa-sort');
   getColors(colorCount);
   fadeTransition();
 });
