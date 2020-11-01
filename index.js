@@ -1,6 +1,5 @@
 const urlBase = 'https://api.noopschallenge.com/hexbot?count=';
 const colorGrid = document.getElementById('color-grid');
-const refreshColors = document.getElementById('refresh-colors');
 const stickyToolbar = document.getElementById('favorite-colors-container');
 const favoriteIcon = document.getElementById('favorite-icon');
 const clipboardIcon = document.getElementById('clipboard-icon');
@@ -138,19 +137,6 @@ fadeTransition = () => {
   }, 2000);
 }
 
-// Refresh colors using refresh icon
-refreshColors.addEventListener('click', function() {
-  let sortByText = document.getElementsByClassName('sort-by-text')[0];
-  let sortIcon = document.getElementById('sort-icon');
-  sortByText.textContent = 'By Hue';
-  sortIcon.classList.add('fa-random');
-  sortIcon.classList.add('fa-sort');
-
-  getColors(colorCount);
-  fadeTransition();
-})
-
-
 // Add color to favorites
 document.addEventListener('click', function (event) {
   if (event.target.classList.contains('add--favorite')) {
@@ -174,8 +160,6 @@ document.addEventListener('click', function (event) {
     removeFavorites.classList.add('active');
   }
 }, false);
-
-
 
 // Removes single color from favorites and activates corresponding color tile in grid
 // Convert rgb string from DOM into hexcode format to match innerText

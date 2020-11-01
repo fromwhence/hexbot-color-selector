@@ -1,4 +1,9 @@
 const sortByHue = document.getElementById('sort-by-hue');
+const sortByText = document.getElementsByClassName('sort-by-text')[0];const sortIcon = document.getElementById('sort-icon');
+const refreshColors = document.getElementById('refresh-colors');
+
+// let hexGrid = document.querySelectorAll('.my--color');
+// let hexGridArr = [...hexGrid];
 
 shuffleColors = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -10,25 +15,18 @@ shuffleColors = (array) => {
   return array;
 }
 
-clearExistingColors = () => {
-  colorGrid.innerHTML = '';
-}
-
 fadeTransition = () => {
   colorGrid.classList.add('fade-transition');
   setTimeout(function(){ 
     colorGrid.classList.remove('fade-transition');
-  }, 2000);
+  }, 1500);
 }
 
 // Sort colors by hue or randomize
 
-let hexToSort = [];
+sortGrid = () => {
 
-sortByHue.addEventListener('click', function() {
-  let sortByText = document.getElementsByClassName('sort-by-text')[0];
-  let sortIcon = document.getElementById('sort-icon');
-
+  let hexToSort = [];
   let hexGrid = document.querySelectorAll('.my--color');
   let hexGridArr = [...hexGrid];
 
@@ -89,7 +87,7 @@ sortByHue.addEventListener('click', function() {
     }).join('')
     colorGrid.innerHTML = `${sortedColorsHtml}`;
   }
- 
+
   if (sortByText.textContent === 'By Hue') {
     sortByText.textContent = 'Random';
     sortIcon.classList.remove('fa-sort');
@@ -97,15 +95,20 @@ sortByHue.addEventListener('click', function() {
     displaySortedColors(sortedColors);
     fadeTransition();
   } 
-  else {
+  else if (sortByText.textContent === 'Random') {
     sortByText.textContent = 'By Hue';
     sortIcon.classList.remove('fa-random');
     sortIcon.classList.add('fa-sort');
-    let shuffledColors = shuffleColors(hexToSort);
+    let shuffledColors = shuffleColors(hexToSort)
     displaySortedColors(shuffledColors);
     fadeTransition();
-  };
-  
-  hexToSort = []
-});
+  } 
 
+  hexToSort = [];
+};
+
+sortByHue.addEventListener('click', sortGrid);
+refreshColors.addEventListener('click', function() {
+  getColors(colorCount);
+  fadeTransition();
+});
