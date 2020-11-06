@@ -297,7 +297,7 @@ a:hover, a:active {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  padding: 0.5rem 1rem 0.225rem 1rem;
+  padding: 0.5rem 1rem 0.3rem 1rem;
 }
 
 #favorite-icon,
@@ -310,7 +310,7 @@ a:hover, a:active {
 
 #favorite-icon  {
   font-size: 2rem;
-  /* margin-top: 0.1rem; */
+  margin-top: 0.1rem;
   margin-bottom: 0.265rem;
 }
 
@@ -318,8 +318,8 @@ a:hover, a:active {
   font-size: 1.3rem;
   position: absolute;
   right: 0.75em;
-  top: 0.435rem;
-  padding: 0.3rem 0.4rem;
+  top: 0.5rem;
+  padding: 0.325rem 0.4rem;
   border-radius: 5px;
   border: 2px solid #9fc7ec;
 }
