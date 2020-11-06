@@ -292,7 +292,7 @@ a:hover, a:active {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 0rem 1rem 0rem 0.9rem;
 }
 
 #favorite-icon,
