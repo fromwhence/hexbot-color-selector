@@ -582,7 +582,7 @@ a:hover, a:active {
 
   #favorite-icon  {
     font-size: 2.2rem;
-    margin-bottom: 0.275rem;
+    /* margin-bottom: 0.25rem; */
   }
 
   #favorite-colors-container {
@@ -599,7 +599,6 @@ a:hover, a:active {
   #favorite-colors li {
     margin: 0 0.75em 0.325em 0;
     font-size: 0.85em;
-    padding: 0.6em 1em 0.6em 0.8em;
   }
 
 }
