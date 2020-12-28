@@ -1,55 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="images/favicon-color-wheel.png">
-  <link href="index.css" rel="stylesheet">
-  <script src="index.js" defer></script>
-  <script src="sort.js" defer></script>
-  <script src="https://kit.fontawesome.com/0e8ff5a22e.js" crossorigin="anonymous"></script>
-  <title>HexSpire Color Selector</title>
-</head>
-<body>
-  <div id="modal" class="fade-in">
-    <div id="modal-content" class="open-modal">
-      <div aria-label="Close instructions" id="close-modal-icon"><i class="fas fa-caret-square-up"></i></div>
-      <p>About and how to use:</p>
-      <ul id="instructions">
-        <li>Colors are generated at random using the <a href="https://noopschallenge.com/challenges/hexbot" target="_blank">Hexbot API</a>.</li>
-        <li>Select the refresh icon to view a new set of colors or sort the current grid by hue.</li>
-        <li>To add a color to your favorites, select its plus sign.</li>
-        <li>The hex codes of saved colors can be copied to the clipboard by using the clipboard icon.</li>
-        <li>Colors can be removed individually from favorites by selecting the color tile or removed all at once by using the trashcan.</li>
-      </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon-color-wheel.png" />
+    <link href="index.css" rel="stylesheet" />
+    <script src="index.js" defer></script>
+    <script src="sort.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/0e8ff5a22e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>HexSpire Color Selector</title>
+  </head>
+  <body>
+    <div id="modal" class="fade-in">
+      <div id="modal-content" class="open-modal">
+        <div aria-label="Close instructions" id="close-modal-icon">
+          <i class="fas fa-caret-square-up"></i>
+        </div>
+        <p>About and how to use:</p>
+        <ul id="instructions">
+          <li>
+            Colors are generated at random using the
+            <a
+              href="https://noopschallenge.com/challenges/hexbot"
+              target="_blank"
+              >Hexbot API</a
+            >
+          </li>
+          <li>
+            Select the refresh icon to view a new set of colors or sort the
+            current grid by hue.
+          </li>
+          <li>To add a color to your favorites, select its plus sign.</li>
+          <li>
+            The hex codes of saved colors can be copied to the clipboard by
+            using the clipboard icon.
+          </li>
+          <li>
+            Colors can be removed individually from favorites by selecting the
+            color tile or removed all at once by using the trashcan.
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <div class="header-container">
-    <header>
-      <h1 class="title">HexSpire</h1>
-      <div id="open-modal-icon"><i class="fas fa-caret-square-down"></i></div>
-    </header>
-    <div class="actions-container">
-      <div id="refresh-colors">
-        <i aria-label="Refresh color grid" class="fas fa-redo-alt"></i>
-        <span class="refresh-text">Colors</span>
-      </div>
-      <div id="sort-by-hue">
-        <i id="sort-icon" class="fas fa-sort"></i>
-        <span class="sort-by-text">By Hue</span>
-      </div>
-      <div id="remove-favorites">
-        <i class="fas fa-trash-alt"></i>
-        <span class="remove-text">Likes</span>
+    <div class="header-container">
+      <header>
+        <h1 class="title">HexSpire</h1>
+        <div id="open-modal-icon"><i class="fas fa-caret-square-down"></i></div>
+      </header>
+      <div class="actions-container">
+        <div id="refresh-colors">
+          <i aria-label="Refresh color grid" class="fas fa-redo-alt"></i>
+          <span class="refresh-text">Colors</span>
+        </div>
+        <div id="sort-by-hue">
+          <i id="sort-icon" class="fas fa-sort"></i>
+          <span class="sort-by-text">By Hue</span>
+        </div>
+        <div id="remove-favorites">
+          <i class="fas fa-trash-alt"></i>
+          <span class="remove-text">Likes</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="favorite-colors-container">
-    <i aria-label="Favorites" id="favorite-icon" class="fab fa-gratipay"></i>
-    <ul id="favorite-colors"></ul>
-    <i aria-label="Copy to clipboard" id="clipboard-icon" class="fas fa-paste"></i>
-  </div>
-  <div id="color-grid">
-  </div>
-</body>
+    <div id="favorite-colors-container">
+      <i aria-label="Favorites" id="favorite-icon" class="fab fa-gratipay"></i>
+      <ul id="favorite-colors"></ul>
+      <i
+        aria-label="Copy to clipboard"
+        id="clipboard-icon"
+        class="fas fa-paste"
+      ></i>
+    </div>
+    <div id="color-grid"></div>
+  </body>
 </html>

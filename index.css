@@ -37,19 +37,20 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   text-decoration: underline;
 }
 
 #open-modal-icon i,
 #close-modal-icon i {
- position: absolute;
- font-size: 1.9rem;
- color: #7ca5cc;
- right: 0.15rem;
- top: 0.25rem;
- padding: 0.7rem 0.9rem;
- cursor: pointer;
+  position: absolute;
+  font-size: 1.9rem;
+  color: #7ca5cc;
+  right: 0.15rem;
+  top: 0.25rem;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
 }
 
 #open-modal-icon i:hover,
@@ -70,8 +71,8 @@ a:hover, a:active {
   width: 100%;
   height: 100%;
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 #modal.fade-in {
@@ -99,7 +100,7 @@ a:hover, a:active {
   padding: 1.625rem 1.25rem 1.25rem 1.25rem;
   z-index: 3;
   width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
   -webkit-animation-name: animateDown;
   -webkit-animation-duration: 0.5s;
   animation-name: animateDown;
@@ -137,7 +138,7 @@ a:hover, a:active {
 
 #modal-content ul {
   list-style-position: inside;
-  list-style-type: "■ ";
+  list-style-type: '■ ';
   background-color: white;
   padding: 1.5rem;
   border: 1px solid #77899b;
@@ -156,44 +157,83 @@ a:hover, a:active {
 
 /* Animation */
 @keyframes animateFadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes animateFadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes animateFadeOut {
-  0% {opacity: 1; top: 0;}
-  99% {opacity: 0; top: 0;}
-  100% {opacity: 0; top: -100%}
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  99% {
+    opacity: 0;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
+  }
 }
 
 @-webkit-keyframes animateFadeOut {
-  from {opacity: 1; top: 0;}
-  to {opacity: 0; top: -100%}
+  from {
+    opacity: 1;
+    top: 0;
+  }
+  to {
+    opacity: 0;
+    top: -100%;
+  }
 }
 
 @keyframes animateDown {
-  from {top: -600px;}
-  to {top: 0;}
+  from {
+    top: -600px;
+  }
+  to {
+    top: 0;
+  }
 }
 
 @-webkit-keyframes animateDown {
-  from {top:-600px;} 
-  to {top: 0;}
+  from {
+    top: -600px;
+  }
+  to {
+    top: 0;
+  }
 }
 
 @keyframes animateUp {
-  from {top: 0;}
-  to {top: -600px;}
+  from {
+    top: 0;
+  }
+  to {
+    top: -600px;
+  }
 }
 
 @-webkit-keyframes animateUp {
-  from {top: 0;}
-  to {top: -600px;}
+  from {
+    top: 0;
+  }
+  to {
+    top: -600px;
+  }
 }
 
 /* Tool bar */
@@ -211,9 +251,9 @@ a:hover, a:active {
   border-bottom: 1px solid #515d69;
 }
 
-#refresh-colors, 
+#refresh-colors,
 #sort-by-hue,
-#remove-favorites  {
+#remove-favorites {
   display: flex;
   align-items: center;
   transition: color 200ms;
@@ -235,7 +275,6 @@ a:hover, a:active {
   justify-content: flex-end;
 }
 
-
 #refresh-colors:hover,
 #refresh-colors:focus,
 #sort-by-hue:hover,
@@ -243,7 +282,7 @@ a:hover, a:active {
   color: #ddefff;
 }
 
-#refresh-colors i, 
+#refresh-colors i,
 #sort-by-hue i,
 #remove-favorites i {
   margin-right: 0.5rem;
@@ -269,7 +308,6 @@ a:hover, a:active {
 #remove-favorites {
   cursor: pointer;
   visibility: hidden;
-
 }
 
 #remove-favorites.active {
@@ -303,7 +341,7 @@ a:hover, a:active {
   align-self: flex-start;
 }
 
-#favorite-icon  {
+#favorite-icon {
   font-size: 2rem;
   padding: 0.5rem 0;
 }
@@ -330,7 +368,7 @@ a:hover, a:active {
   border-color: #5a6774;
 }
 
-#clipboard-icon:hover ,
+#clipboard-icon:hover,
 #clipboard-icon:focus i {
   color: #86fc1e;
 }
@@ -377,7 +415,7 @@ a:hover, a:active {
   width: 100%;
   position: fixed;
   top: 0;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.3);;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 #favorite-colors-container.sticky + .content {
@@ -395,8 +433,12 @@ a:hover, a:active {
 }
 
 @keyframes gridFadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #color-grid.fade-transition {
@@ -407,9 +449,15 @@ a:hover, a:active {
 }
 
 @keyframes gridTransition {
-  0% {opacity: 1;}
-  50% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #color-grid.no-pointer {
@@ -418,7 +466,7 @@ a:hover, a:active {
 
 /* Aspect-ratio trick to display square grid items */
 #color-grid > .my--color::before {
-  content: "";
+  content: '';
   padding-bottom: 100%;
   display: block;
 }
@@ -443,7 +491,7 @@ a:hover, a:active {
 .my--color:hover .add--favorite,
 .my--color:focus .add--favorite {
   /* overrides inline style from JavaScript */
-  opacity: 1.0 !important;
+  opacity: 1 !important;
 }
 
 .my--color.selected,
@@ -485,7 +533,7 @@ a:hover, a:active {
     padding: 1.675rem 1.25rem;
   }
 
-  .actions-container {  
+  .actions-container {
     padding: 0.5rem 1.25rem;
   }
 
@@ -530,7 +578,7 @@ a:hover, a:active {
     top: 0.3rem;
   }
 
-  .actions-container {  
+  .actions-container {
     padding: 0.5rem 1.375rem;
   }
 
@@ -549,7 +597,6 @@ a:hover, a:active {
   #favorite-colors li {
     margin: 0 0.625em 0.325em 0;
   }
-
 }
 
 @media (min-width: 1024px) {
@@ -572,11 +619,12 @@ a:hover, a:active {
     top: 0.45rem;
   }
 
-  .actions-container {  
+  .actions-container {
     padding: 0.5rem 1.8rem;
+    font-size: 1rem;
   }
 
-  #favorite-icon  {
+  #favorite-icon {
     font-size: 2.2rem;
   }
 
@@ -595,7 +643,6 @@ a:hover, a:active {
     margin: 0 0.75em 0.325em 0;
     font-size: 0.85em;
   }
-
 }
 
 @media (min-width: 1200px) {
