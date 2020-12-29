@@ -11,7 +11,7 @@ const modalContent = document.getElementById('modal-content');
 const closeModalIcon = document.getElementById('close-modal-icon');
 const openModalIcon = document.getElementById('open-modal-icon');
 
-// Instructions modal
+// Close instructions modal
 closeModalIcon.addEventListener('click', function () {
   modal.classList.remove('fade-in');
   modalContent.classList.remove('open-modal');
@@ -20,6 +20,7 @@ closeModalIcon.addEventListener('click', function () {
   colorGrid.classList.remove('no-pointer');
 });
 
+// Open instructions modal
 openModalIcon.addEventListener('click', function () {
   modal.classList.remove('fade-out');
   modalContent.classList.remove('close-modal');

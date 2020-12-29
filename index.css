@@ -85,9 +85,9 @@ a:active {
 
 #modal.fade-out {
   -webkit-animation-name: animateFadeOut;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.5s;
   animation-name: animateFadeOut;
-  animation-duration: 0.4s;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
 
@@ -224,6 +224,7 @@ a:active {
   }
   to {
     top: -600px;
+    opacity: 1;
   }
 }
 
