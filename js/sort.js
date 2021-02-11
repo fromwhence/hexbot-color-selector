@@ -1,11 +1,10 @@
 'use strict';
 
-const sortByHue = document.getElementById('sort-by-hue');
-const sortByText = document.getElementsByClassName('sort-by-text')[0];
-const sortIcon = document.getElementById('sort-icon');
-const refreshColors = document.getElementById('refresh-colors');
+const sortByHue = document.querySelector('.sort-by-hue');
+const sortByText = document.querySelector('.sort-by-text');
+const sortIcon = document.querySelector('.sort-icon');
 
-const shuffleColors = array => {
+const shuffleColors = function (array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * i);
     const temp = array[i];
@@ -15,36 +14,26 @@ const shuffleColors = array => {
   return array;
 };
 
-// const fadeTransition = () => {
-//   colorGrid.classList.add('fade-transition');
-//   setTimeout(function () {
-//     colorGrid.classList.remove('fade-transition');
-//   }, 1500);
-// };
-
 // Sort colors by hue or randomize
-
-const sortGrid = () => {
-  let hexToSort = [];
-  let hexGrid = document.querySelectorAll('.my--color');
-  let hexGridArr = [...hexGrid];
+const sortGrid = function () {
+  const hexSorted = [];
+  const hexGridArr = Array.from(document.querySelectorAll('.my--color'));
 
   for (let i = 0; i < hexGridArr.length; i++) {
-    let hex = hexGridArr[i].lastElementChild.innerText;
-    hexToSort.push(hex);
+    const hex = hexGridArr[i].lastElementChild.innerText;
+    hexSorted.push(hex);
   }
 
   // Color conversion and hue sorting function
-
   function hexToHsb(hex) {
     hex = hex.replace(/^#/, '');
     hex = hex.length === 3 ? hex.replace(/(.)/g, '$1$1') : hex;
 
-    let r = parseInt(hex.substr(0, 2), 16) / 255,
+    const r = parseInt(hex.substr(0, 2), 16) / 255,
       g = parseInt(hex.substr(2, 2), 16) / 255,
       b = parseInt(hex.substr(4, 2), 16) / 255;
 
-    let cMax = Math.max(r, g, b),
+    const cMax = Math.max(r, g, b),
       cMin = Math.min(r, g, b),
       delta = cMax - cMin,
       saturation = cMax ? delta / cMax : 0;
@@ -63,16 +52,14 @@ const sortGrid = () => {
     }
   }
 
-  let sortedColors = hexToSort;
-
-  sortedColors = sortedColors.sort(function (a, b) {
-    let hsva = hexToHsb(a);
-    let hsvb = hexToHsb(b);
+  const sortedColors = hexSorted.sort(function (a, b) {
+    const hsva = hexToHsb(a);
+    const hsvb = hexToHsb(b);
     return hsva[0] - hsvb[0];
   });
 
-  const displaySortedColors = colors => {
-    let sortedColorsHtml = colors
+  const displaySortedColors = function (sortedColors) {
+    const sortedColorsHtml = sortedColors
       .map(color => {
         return `<div class="my--color" style="background: ${color};">
                 <span class="add--favorite" 
@@ -99,20 +86,10 @@ const sortGrid = () => {
     sortByText.textContent = 'By Hue';
     sortIcon.classList.remove('fa-random');
     sortIcon.classList.add('fa-sort');
-    let shuffledColors = shuffleColors(hexToSort);
+    const shuffledColors = shuffleColors(hexSorted);
     displaySortedColors(shuffledColors);
     fadeTransition();
   }
-
-  hexToSort = [];
 };
 
 sortByHue.addEventListener('click', sortGrid);
-
-refreshColors.addEventListener('click', function () {
-  sortByText.textContent = 'By Hue';
-  sortIcon.classList.remove('fa-random');
-  sortIcon.classList.add('fa-sort');
-  getColors(colorCount);
-  fadeTransition();
-});

@@ -4,14 +4,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* border: 1px solid pink; */
 }
 
 body {
   display: relative;
-  background-color: #bcdbf8;
+  background-color: #c5e2fd;
   height: 100%;
   width: 100%;
+  color: #404a53;
   font-family: 'Roboto Mono', monospace;
 }
 
@@ -21,15 +21,31 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.5rem 1rem;
 }
 
 .title {
   color: #404a53;
   font-size: 1.25rem;
-  font-weight: 700;
-  padding: 1.5rem 1rem;
-  text-align: center;
+  font-weight: 400;
   cursor: default;
+}
+
+.open-instructions {
+  color: #54616d;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.min-word-spacing {
+  word-spacing: -4px;
+  padding-right: 0.6rem;
+}
+
+.open-instructions-icon {
+  font-size: 1.9rem;
+  color: #7ca5cc;
 }
 
 a {
@@ -42,8 +58,10 @@ a:active {
   text-decoration: underline;
 }
 
-#open-modal-icon i,
-#close-modal-icon i {
+/* Instructions modal */
+
+.open-modal i,
+.close-modal i {
   position: absolute;
   font-size: 1.9rem;
   color: #7ca5cc;
@@ -53,16 +71,16 @@ a:active {
   cursor: pointer;
 }
 
-#open-modal-icon i:hover,
-#open-modal-icon i:focus,
-#close-modal-icon i:hover,
-#close-modal-icon i:focus {
+.open-modal i:hover,
+.open-modal i:focus,
+.close-modal i:hover,
+.close-modal i:focus,
+.open-instructions-icon:hover,
+.open-instructions-icon:focus {
   color: #404a53;
 }
 
-/* Instructions modal */
-#modal {
-  display: block;
+.modal-overlay {
   position: fixed;
   z-index: 2;
   opacity: 1;
@@ -75,7 +93,11 @@ a:active {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-#modal.fade-in {
+.hidden {
+  display: none;
+}
+
+.fade-in {
   -webkit-animation-name: animateFadeIn;
   -webkit-animation-duration: 0.5s;
   animation-name: animateFadeIn;
@@ -83,7 +105,7 @@ a:active {
   animation-fill-mode: forwards;
 }
 
-#modal.fade-out {
+.fade-out {
   -webkit-animation-name: animateFadeOut;
   -webkit-animation-duration: 0.5s;
   animation-name: animateFadeOut;
@@ -91,7 +113,7 @@ a:active {
   animation-fill-mode: forwards;
 }
 
-#modal-content {
+.modal-window {
   position: relative;
   color: #404a53;
   background-color: #cce6ff;
@@ -109,18 +131,12 @@ a:active {
 }
 
 @media (max-width: 360px) {
-  #modal-content {
+  .modal-window {
     padding: 1.85rem 1rem 1rem 1rem;
   }
 }
 
-#modal-content.open-modal {
-  -webkit-animation-name: animateDown;
-  animation-name: animateDown;
-  animation-fill-mode: forwards;
-}
-
-#modal-content.close-modal {
+.modal-window.close-modal {
   -webkit-animation-name: animateUp;
   animation-name: animateUp;
   -webkit-animation-duration: 0.5s;
@@ -128,7 +144,7 @@ a:active {
   animation-duration: 0.5s;
 }
 
-#modal-content p {
+.modal-window p {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -136,7 +152,7 @@ a:active {
   word-spacing: -1px;
 }
 
-#modal-content ul {
+.modal-window ul {
   list-style-position: inside;
   list-style-type: '■ ';
   background-color: white;
@@ -145,27 +161,18 @@ a:active {
   border-radius: 0.4rem;
 }
 
-#modal-content li {
+.modal-window li {
   margin-bottom: 0.9rem;
   line-height: 1.5;
   word-spacing: -1px;
 }
 
-#modal-content li:last-of-type {
+.modal-window li:last-of-type {
   margin-bottom: 0.375rem;
 }
 
 /* Animation */
 @keyframes animateFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes animateFadeIn {
   from {
     opacity: 0;
   }
@@ -189,27 +196,7 @@ a:active {
   }
 }
 
-@-webkit-keyframes animateFadeOut {
-  from {
-    opacity: 1;
-    top: 0;
-  }
-  to {
-    opacity: 0;
-    top: -100%;
-  }
-}
-
 @keyframes animateDown {
-  from {
-    top: -600px;
-  }
-  to {
-    top: 0;
-  }
-}
-
-@-webkit-keyframes animateDown {
   from {
     top: -600px;
   }
@@ -240,21 +227,21 @@ a:active {
 /* Tool bar */
 
 .actions-container {
-  background-color: #5a6774;
+  background-color: #637180;
   color: white;
   display: flex;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0;
   height: auto;
-  padding: 0.5rem 1.1rem 0.5rem 1.1rem;
+  padding: 0.5rem 1.1rem;
   border-top: 1px solid #515d69;
   border-bottom: 1px solid #515d69;
 }
 
-#refresh-colors,
-#sort-by-hue,
-#remove-favorites {
+.refresh-colors,
+.sort-by-hue,
+.delete-favorites {
   display: flex;
   align-items: center;
   transition: color 200ms;
@@ -263,42 +250,47 @@ a:active {
   /* border: 1px solid red; */
 }
 
-#refresh-colors {
+.refresh-colors {
   justify-content: flex-start;
 }
 
-#sort-by-hue {
+.sort-by-hue {
   justify-content: center;
   visibility: visible;
 }
 
-#remove-favorites {
+.delete-favorites {
+  visibility: hidden;
   justify-content: flex-end;
 }
 
-#refresh-colors:hover,
-#refresh-colors:focus,
-#sort-by-hue:hover,
-#sort-by-hue:focus {
+.active {
+  visibility: visible;
+}
+
+.refresh-colors:hover,
+.refresh-colors:focus,
+.sort-by-hue:hover,
+.sort-by-hue:focus {
   color: #ddefff;
 }
 
-#refresh-colors i,
-#sort-by-hue i,
-#remove-favorites i {
+.refresh-colors i,
+.sort-by-hue i,
+.delete-favorites i {
   margin-right: 0.5rem;
 }
 
-#refresh-colors i {
+.refresh-colors i {
   transition: transform 200ms;
   transform: rotate(-7deg);
 }
 
-#refresh-colors:hover i {
+.refresh-colors:hover i {
   transform: rotate(30deg);
 }
 
-#sort-by-hue i {
+.sort-by-hue i {
   font-size: 1.1rem;
 }
 
@@ -306,23 +298,23 @@ a:active {
   word-spacing: -3px;
 }
 
-#remove-favorites {
+.delete-favorites {
   cursor: pointer;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
-#remove-favorites.active {
+.delete-favorites.active {
   visibility: visible;
 }
 
-#remove-favorites.active:hover,
-#remove-favorites.active:focus {
+.delete-favorites.active:hover,
+.delete-favorites.active:focus {
   color: rgb(255, 125, 125);
 }
 
 /* Favorites bar */
 
-#favorite-colors-container {
+.favorite-colors-container {
   position: relative;
   width: 100%;
   height: auto;
@@ -334,20 +326,20 @@ a:active {
   padding: 0rem 1rem 0rem 0.9rem;
 }
 
-#favorite-icon,
-#clipboard-icon {
+.favorite-icon,
+.clipboard-icon {
   display: inline-block;
   pointer-events: none;
   color: #9fc7ec;
   align-self: flex-start;
 }
 
-#favorite-icon {
+.favorite-icon {
   font-size: 2rem;
   padding: 0.5rem 0;
 }
 
-#clipboard-icon {
+.clipboard-icon {
   font-size: 1.3rem;
   position: absolute;
   right: 0.75em;
@@ -357,11 +349,11 @@ a:active {
   border: 2px solid #9fc7ec;
 }
 
-#favorite-icon.icon-active {
+.favorite-icon.icon-active {
   color: #515d69;
 }
 
-#clipboard-icon.icon-active {
+.clipboard-icon.icon-active {
   color: white;
   pointer-events: all;
   cursor: pointer;
@@ -369,14 +361,14 @@ a:active {
   border-color: #5a6774;
 }
 
-#clipboard-icon:hover,
-#clipboard-icon:focus i {
+.clipboard-icon:hover,
+.clipboard-icon:focus i {
   color: #86fc1e;
 }
 
 /* Selected color tiles in favorites bar */
 
-#favorite-colors {
+.favorite-colors {
   display: block;
   flex-wrap: wrap;
   justify-content: center;
@@ -385,7 +377,7 @@ a:active {
   margin-right: 2.625rem;
 }
 
-#favorite-colors li {
+.favorite--color {
   position: relative;
   display: inline-block;
   top: 0;
@@ -396,11 +388,11 @@ a:active {
   cursor: pointer;
 }
 
-#favorite-colors li:last-of-type {
+.favorite--color:last-of-type {
   margin-right: 0;
 }
 
-#favorite-colors li:hover:after {
+.favorite--color:hover:after {
   content: '\2715';
   font-size: 0.5rem;
   color: inherit;
@@ -411,7 +403,7 @@ a:active {
 }
 
 /* Sticky class added to favorites bar with JS when is reaches scroll position */
-#favorite-colors-container.sticky {
+.favorite-colors-container.sticky {
   z-index: 1;
   width: 100%;
   position: fixed;
@@ -419,7 +411,7 @@ a:active {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
-#favorite-colors-container.sticky + .content {
+.favorite-colors-container.sticky + .content {
   padding-top: 50px;
 }
 
@@ -461,10 +453,6 @@ a:active {
   }
 }
 
-#color-grid.no-pointer {
-  pointer-events: none; /* when modal is open */
-}
-
 /* Aspect-ratio trick to display square grid items */
 #color-grid > .my--color::before {
   content: '';
@@ -480,11 +468,13 @@ a:active {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .hex--color {
-  transition: opacity 300ms;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 
 .my--color:hover span.hex--color,
@@ -492,15 +482,16 @@ a:active {
 .my--color:hover .add--favorite,
 .my--color:focus .add--favorite {
   /* overrides inline style from JavaScript */
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .my--color.selected,
 .my--color.selected span.hex--color,
 .my--color.selected .add--favorite {
-  opacity: 0.6 !important;
+  opacity: 0.5;
   pointer-events: none;
-  filter: grayscale(25%);
+  filter: grayscale(50%);
+  /* color: black !important; */
 }
 
 .add--favorite {
@@ -509,49 +500,38 @@ a:active {
   right: 0;
   font-size: 1.1em;
   padding: 0.3em 0.5em;
+  opacity: 0.3;
 }
 
 @media (min-width: 480px) {
-  #modal-content {
+  .modal-window {
     width: 80%;
   }
 }
 
 @media (min-width: 576px) {
-  #modal-content {
+  .modal-window {
     width: 70%;
     max-width: 450px;
     padding: 1.85rem 1.5rem 1.6rem 1.5rem;
   }
 
-  #open-modal-icon i {
+  .open-modal i {
     font-size: 2rem;
     right: 0.3rem;
     top: 0.2rem;
   }
 
-  .title {
-    padding: 1.675rem 1.25rem;
-  }
-
-  .actions-container {
-    padding: 0.5rem 1.25rem;
-  }
-
-  #favorite-colors-container {
-    padding-left: 1.1rem;
-  }
-
-  #clipboard-icon {
+  .clipboard-icon {
     right: 0.95em;
     top: 0.4725;
   }
 
-  #favorite-colors {
+  .favorite-colors {
     margin-left: 1rem;
   }
 
-  #favorite-colors li {
+  .favorite-colors li {
     margin: 0 0.625em 0.325em 0;
   }
 
@@ -561,93 +541,108 @@ a:active {
 }
 
 @media (min-width: 768px) {
-  #modal-content {
+  .modal-window {
     width: 55%;
   }
 
-  #modal-content p {
+  .modal-window p {
     margin-bottom: 1.25rem;
   }
 
-  .title {
-    padding: 1.75rem 1.375rem;
+  header {
+    padding: 1.6rem 1.5rem;
   }
 
-  #open-modal-icon i {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .open-modal i {
     font-size: 2rem;
     right: 0.4rem;
     top: 0.3rem;
   }
 
   .actions-container {
-    padding: 0.5rem 1.375rem;
+    padding: 0.5rem 1.5rem;
   }
 
-  #favorite-colors-container {
-    padding-left: 1.2rem;
+  .favorite-colors-container {
+    padding: 0rem 1.5rem 0rem 1.3rem;
   }
 
-  #clipboard-icon {
+  .clipboard-icon {
     right: 1em;
   }
 
-  #favorite-colors {
+  .favorite-colors {
     margin-left: 1.2rem;
   }
 
-  #favorite-colors li {
+  .favorite-colors li {
     margin: 0 0.625em 0.325em 0;
   }
 }
 
 @media (min-width: 1024px) {
-  #modal-content {
+  .modal-window {
     width: 40%;
     margin-top: 4rem;
   }
 
-  #modal-content p {
+  .modal-window p {
     margin-bottom: 1.3rem;
   }
 
-  .title {
-    padding: 1.85rem 1.75rem;
-  }
-
-  #open-modal-icon i {
+  .open-modal i {
     font-size: 2rem;
     right: 0.8rem;
     top: 0.45rem;
   }
 
+  header {
+    padding: ;
+  }
+
   .actions-container {
-    padding: 0.5rem 1.8rem;
     font-size: 1rem;
   }
 
-  #favorite-icon {
+  .favorite-icon {
     font-size: 2.2rem;
   }
 
-  #favorite-colors-container {
-    padding-left: 1.625rem;
+  header {
+    padding: 1.7rem 1.7rem;
   }
 
-  #clipboard-icon {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .actions-container {
+    padding: 0.5rem 1.7rem;
+  }
+
+  .favorite-colors-container {
+    padding: 0rem 1.7rem 0.1rem 1.5rem;
+  }
+
+  .clipboard-icon {
     font-size: 1.45rem;
     right: 1.7rem;
     top: 0.385rem;
     padding: 0.35rem 0.45rem;
   }
 
-  #favorite-colors li {
+  .favorite-colors li {
     margin: 0 0.75em 0.325em 0;
     font-size: 0.85em;
   }
 }
 
 @media (min-width: 1200px) {
-  #modal-content {
+  .modal-window {
     width: 35%;
     margin-top: 8.75rem;
   }
