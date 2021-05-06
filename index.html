@@ -47,7 +47,7 @@
         </div>
       </header>
       <div class="actions-container">
-        <div class="refresh-colors">
+        <div class="refresh-colors" title="Refresh color grid">
           <i aria-label="Refresh color grid" class="fas fa-redo-alt"></i>
           <span class="refresh-text">Colors</span>
         </div>
@@ -55,7 +55,7 @@
           <i class="sort-icon fas fa-sort"></i>
           <span class="sort-by-text">By Hue</span>
         </div>
-        <div class="delete-favorites">
+        <div class="delete-favorites" title="Remove colors">
           <i class="fas fa-trash-alt"></i>
           <span class="remove-text">Likes</span>
         </div>
@@ -64,7 +64,11 @@
     <div class="favorite-colors-container">
       <i aria-label="Favorites" class="favorite-icon fab fa-gratipay"></i>
       <ul class="favorite-colors"></ul>
-      <i aria-label="Copy to clipboard" class="clipboard-icon fas fa-paste"></i>
+      <i
+        aria-label="Copy to clipboard"
+        class="clipboard-icon fas fa-paste"
+        title="Copy colors to clipboard"
+      ></i>
     </div>
     <div id="color-grid"></div>
   </body>
